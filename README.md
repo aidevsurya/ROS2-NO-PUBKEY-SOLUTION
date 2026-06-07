@@ -1,10 +1,13 @@
 # ROS2-NO-PUBKEY-SOLUTION
 IF YOU ARE ALSO FACING NO-PUBKEY ERROR WHILE ADDING ROS2 Repo from ORIGINAL SOURCE and from official website commands, THEN FIX THEM.
 
-1) Removed ros2.list from below location if it was already present.
+1) Removed ros2.list or similiar from below location if it was already present.
+<code>rm /etc/apt/sources.list.d/ros2.list</code>
 
-/etc/apt/sources.list.d/ros2.list
-2) Downloaded key via $ curl http://repo.ros2.org/repos.key | sudo apt-key add -. Reference post : https://answers.ros.org/question/379190/apt-update-signatures-were-invalid-f42ed6fbab17c654/
+2) Downloaded key via 
+
+<code>curl http://repo.ros2.org/repos.key | sudo apt-key add -</code> 
+Reference post : https://answers.ros.org/question/379190/apt-update-signatures-were-invalid-f42ed6fbab17c654/
 
 3) You will get a key added similar to /etc/apt/trusted.gpg But name could vary. You can find name of key by sudo apt-key list
 
