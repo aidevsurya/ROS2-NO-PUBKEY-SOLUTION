@@ -10,6 +10,10 @@ IF YOU ARE ALSO FACING NO-PUBKEY ERROR WHILE ADDING ROS2 Repo from ORIGINAL SOUR
 
 4) copy the file /etc/apt/trusted.gpg to location /usr/share/keyrings and rename it to ros-archive-keyring.gpg
 
-5) If you were following ros2 humble installation steps (https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html), you might have realized that below command is adding echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null following line deb [arch=arm64 signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu jammy main to the file /etc/apt/sources.list.d/ros2.list
+5) If you were following ros2 humble installation steps (https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html), you might have realized that below command is adding echo
+<code>
+deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null </code>
 
-6) Now, following the remaining steps in installation tutorial should help you to get humble installed.
+This Above Command line will add active & latest link to apt source - deb [arch=arm64 signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu jammy main to the file /etc/apt/sources.list.d/ros2.list
+
+8) Now, following the remaining steps in installation tutorial should help you to get humble installed.
